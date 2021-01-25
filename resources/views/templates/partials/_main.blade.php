@@ -1,0 +1,5 @@
+
+
+
+  {{-- Zone Dynamique --}}
+  @yield('content')
