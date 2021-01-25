@@ -14,13 +14,13 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema mydb
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `laravel_basica` DEFAULT CHARACTER SET utf8 ;
+USE `laravel_basica` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`clients`
+-- Table `laravel_basica`.`clients`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`clients` (
+CREATE TABLE IF NOT EXISTS `laravel_basica`.`clients` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   `created_at` DATETIME NOT NULL,
@@ -30,9 +30,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`works`
+-- Table `laravel_basica`.`works`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`works` (
+CREATE TABLE IF NOT EXISTS `laravel_basica`.`works` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `title` VARCHAR(255) NOT NULL,
   `content` TEXT NULL,
@@ -42,19 +42,19 @@ CREATE TABLE IF NOT EXISTS `mydb`.`works` (
   `updated_at` DATETIME NULL,
   `client_id` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_works_clients_idx` (`client_id` ASC) VISIBLE,
+  INDEX `fk_works_clients_idx` (`client_id` ASC),
   CONSTRAINT `fk_works_clients`
     FOREIGN KEY (`client_id`)
-    REFERENCES `mydb`.`clients` (`id`)
+    REFERENCES `laravel_basica`.`clients` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`tags`
+-- Table `laravel_basica`.`tags`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`tags` (
+CREATE TABLE IF NOT EXISTS `laravel_basica`.`tags` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   `created_at` DATETIME NOT NULL,
@@ -64,9 +64,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`categories`
+-- Table `laravel_basica`.`categories`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`categories` (
+CREATE TABLE IF NOT EXISTS `laravel_basica`.`categories` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   `created_at` DATETIME NOT NULL,
@@ -76,9 +76,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`posts`
+-- Table `laravel_basica`.`posts`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`posts` (
+CREATE TABLE IF NOT EXISTS `laravel_basica`.`posts` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `title` VARCHAR(255) NOT NULL,
   `content` TEXT NULL,
@@ -86,32 +86,32 @@ CREATE TABLE IF NOT EXISTS `mydb`.`posts` (
   `updated_at` DATETIME NULL,
   `categorie_id` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_posts_categories1_idx` (`categorie_id` ASC) VISIBLE,
+  INDEX `fk_posts_categories1_idx` (`categorie_id` ASC) ,
   CONSTRAINT `fk_posts_categories1`
     FOREIGN KEY (`categorie_id`)
-    REFERENCES `mydb`.`categories` (`id`)
+    REFERENCES `laravel_basica`.`categories` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`works_has_tags`
+-- Table `laravel_basica`.`works_has_tags`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`works_has_tags` (
+CREATE TABLE IF NOT EXISTS `laravel_basica`.`works_has_tags` (
   `work_id` INT UNSIGNED NOT NULL,
   `tag_id` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`work_id`, `tag_id`),
-  INDEX `fk_works_has_tags_tags1_idx` (`tag_id` ASC) VISIBLE,
-  INDEX `fk_works_has_tags_works1_idx` (`work_id` ASC) VISIBLE,
+  INDEX `fk_works_has_tags_tags1_idx` (`tag_id` ASC) ,
+  INDEX `fk_works_has_tags_works1_idx` (`work_id` ASC) ,
   CONSTRAINT `fk_works_has_tags_works1`
     FOREIGN KEY (`work_id`)
-    REFERENCES `mydb`.`works` (`id`)
+    REFERENCES `laravel_basica`.`works` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_works_has_tags_tags1`
     FOREIGN KEY (`tag_id`)
-    REFERENCES `mydb`.`tags` (`id`)
+    REFERENCES `laravel_basica`.`tags` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
