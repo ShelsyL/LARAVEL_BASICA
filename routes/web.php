@@ -43,6 +43,13 @@ Route::get('/portfolio', function () {
        ->name('works.show');
 
 
+// LISTE DES POSTS
+// PATTERN: /blog
+// CTRL: Posts
+// ACTION: index
+Route::get('/blog', [Posts::class, 'index'])->name('blog');
+
+
 // ROUTE DU DASHBOARD AVEC IDENTIFICATION
 Route::get('/dashboard', function () {
     return view('dashboard');
