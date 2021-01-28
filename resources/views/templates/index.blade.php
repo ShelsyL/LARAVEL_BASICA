@@ -5,11 +5,10 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <html lang="en">
 
-<head>
+  <head>
     @include('templates.partials._head')
-</head>
-
-<body>
+  </head>
+  <body>
 
     @include('templates.partials._header')
 
@@ -19,5 +18,5 @@
 
     @include('templates.partials._scripts')
 
-    </body>
+  </body>
 </html>

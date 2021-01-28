@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Works;
+use App\Http\Controllers\Posts;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,15 +16,31 @@ use Illuminate\Support\Facades\Route;
 */
 require __DIR__.'/auth.php';
 
+
+// ROUTE PAR DEFAUT
+// PATTERN: /
+// CTRL: Works
+// ACTION: index
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/test', function () {
-    return view('templates/index');
+    return view('home.index');
 });
 
 
+// ROUTE DU DASHBOARD AVEC IDENTIFICATION
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+
+// ROUTE DU TEMPLATE WELCOME DE LARAVEL
+Route::get('/welcome', function () {
+    return view('welcome');
+});
+
+
+
+// CONTACT PAGE
+// PATTERN: /contact
+// CTRL: Contacts
+// ACTION: form
+  // Route::get('/', [Home::class, 'index'])->name('home.index');
