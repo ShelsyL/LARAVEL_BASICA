@@ -50,6 +50,16 @@ Route::get('/portfolio', function () {
 Route::get('/blog', [Posts::class, 'index'])->name('blog');
 
 
+// DETAILS D'UN POST
+// PATTERN: /blog/post/slug
+// CTRL: Post
+// ACTION: show
+  Route::get('/blog/{post}/{slug}', [Posts::class, 'show'])
+       ->where('work', '[1-9][0-9]*')
+       ->where('slug', '[a-z0-9][a-z0-9\-]*')
+       ->name('posts.show');
+
+
 // ROUTE DU DASHBOARD AVEC IDENTIFICATION
 Route::get('/dashboard', function () {
     return view('dashboard');

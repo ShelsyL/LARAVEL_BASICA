@@ -13,4 +13,7 @@ class Posts extends Controller
                 ->get();
     return view('posts.index', compact('posts'));
   }
+  public function show (Post $post) {
+    return view('posts.show', compact('post'));
+  }
 }
