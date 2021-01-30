@@ -21,7 +21,7 @@
                 <li class="active"><a href="{{ route('home') }}">Home</a></li>
                 <li><a href="{{ route('portfolio') }}">Portfolio</a></li>
                 <li><a href="{{ route('blog') }}">Blog</a></li>
-                <li><a href="contact-us.html">Contact</a></li>
+                <li><a href="{{ route('contact') }}">Contact</a></li>
             </ul>
         </div>
     </div>

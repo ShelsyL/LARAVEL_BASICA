@@ -21,32 +21,48 @@
      <!-- End Featured News -->
 
 
+{{-- TOUJOURS EN TEST / A VERIFIER --}}
      <!-- Latest News FB -->
      <div class="col-sm-6 latest-news">
-       <h2>Lastest FaceBook/Twitter News</h2>
+       <h2>Lastest FaceBookkkk/Twitter News</h2>
        <div class="row">
          <div class="col-sm-12">
-           <div class="caption"><a href="full-width.html">Donec elementum mi vitae enim fermentum lobortis.</a></div>
-           <div class="date">16 May 2013 </div>
-           <div class="intro">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. <a href="full-width.html">Read more...</a></div>
-         </div>
+           <div class="fb-page" data-href="https://www.facebook.com/Ofeel-102226305040573/"
+             data-tabs="timeline,events,messages" data-width="500" data-height="500"
+             data-small-header="true" data-adapt-container-width="true"
+             data-hide-cover="true" data-show-facepile="true">
+             <blockquote cite="https://www.facebook.com/Ofeel-102226305040573/" class="fb-xfbml-parse-ignore">
+               <a href="https://www.facebook.com/Ofeel-102226305040573/">O&#039;feel</a>
+             </blockquote>
+           </div>
+           </div>
        </div>
        <div class="row">
          <div class="col-sm-12">
-           <div class="caption"><a href="full-width.html">In hac habitasse platea dictumst.</a></div>
-           <div class="date">14 May 2013 </div>
-           <div class="intro">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <a href="full-width.html">Read more...</a></div>
+               <a class="twitter-timeline"
+                 href="https://twitter.com/twitterdev">
+                 Tweets by @TwitterDev
+               </a>
          </div>
-       </div>
-       <div class="row">
-         <div class="col-sm-12">
-           <div class="caption"><a href="full-width.html"> Nam condimentum laoreet sagittis.</a></div>
-           <div class="date">14 May 2013 </div>
-           <div class="intro">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <a href="full-width.html">Read more...</a></div>
+         <div id="superman">
          </div>
-       </div>
+         <script>
+             twttr.widgets.createTimeline(
+                   {
+                     sourceType: "profile",
+                     screenName: "TwitterDev"
+                   },
+           document.getElementById("superman"));
+       </script>
+     </div>
+
+       <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v9.0" nonce="qiTpaxFa"></script>
+
      </div>
      <!-- End Featured News -->
+
+
+
    </div>
  </div>
 </div>

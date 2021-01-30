@@ -77,4 +77,7 @@ Route::get('/welcome', function () {
 // PATTERN: /contact
 // CTRL: Contacts
 // ACTION: form
+Route::get('/contact', function () {
+    return view('contact/index');
+})->name('contact');
   // Route::get('/', [Home::class, 'index'])->name('home.index');
