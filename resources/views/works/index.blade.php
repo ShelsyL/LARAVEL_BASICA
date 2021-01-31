@@ -14,9 +14,14 @@
   <h1>Our Portfolio</h1>
  @endsection
 
+{{-- Script --}}
+ @section('scripts')
+   <script src="{{ asset('assets/js/works/index.js')}}"></script>
+ @endsection
+
 
  @section('content')
-   <div class="section">
+   <div class="section" id="toto">
       <div class="container">
          <div class="row">
             <div class="col-sm-12">
@@ -32,14 +37,11 @@
    <div class="section">
       <div class="container">
          <div class="row">
-            <ul class="grid cs-style-2">
+            <ul class="grid cs-style-2" id="works_list">
                {{-- Liste des Works - Portfolio --}}
                @include('works._list', ['works' =>\App\Models\Work::take(6)->get()])
             </ul>
          </div>
-         <ul class="pager">
-            <li><a href="#">More works</a></li>
-         </ul>
       </div>
    </div>
  @endsection

@@ -81,3 +81,9 @@ Route::get('/contact', function () {
     return view('contact/index');
 })->name('contact');
   // Route::get('/', [Home::class, 'index'])->name('home.index');
+
+
+// A redéfini ?????????????
+Route::get('/works/ajax/more', [Works::class, 'more'])->name('works.ajax.more');
+
+Route::get('/test', function(){ return 'hello baby'; })->name('test');

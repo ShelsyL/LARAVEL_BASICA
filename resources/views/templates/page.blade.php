@@ -1,3 +1,4 @@
+<!DOCTYPE html>
  @extends('templates.index')
 
 <!-- Page Title -->
