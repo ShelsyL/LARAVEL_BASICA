@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Works;
 use App\Http\Controllers\Posts;
+use App\Http\Controllers\AdminPosts;
+use App\Http\Controllers\AdminWorks;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,12 +68,22 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 
+// ROUTE DU DASHBOARD (BACKOFFICE)
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
 // ROUTE DU TEMPLATE WELCOME DE LARAVEL
 Route::get('/welcome', function () {
     return view('welcome');
 });
 
 
+// ROUTE ADMIN POSTS
+Route::get('/admin/posts', [AdminPosts::class, 'index'])->name('admin.posts.index');
+
+// ROUTE ADMIN WORKS
+Route::get('/admin/works', [AdminWorks::class, 'index'])->name('admin.works.index');
 
 // CONTACT PAGE
 // PATTERN: /contact
@@ -83,7 +95,8 @@ Route::get('/contact', function () {
   // Route::get('/', [Home::class, 'index'])->name('home.index');
 
 
-// A redéfini ?????????????
+// AJAX MORE POSTS
+// PATTERN: /works/ajax/more
+// CTRL: Works
+// ACTION: more
 Route::get('/works/ajax/more', [Works::class, 'more'])->name('works.ajax.more');
-
-Route::get('/test', function(){ return 'hello baby'; })->name('test');

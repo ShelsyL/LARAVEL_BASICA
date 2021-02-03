@@ -22,6 +22,11 @@
                 <li><a href="{{ route('portfolio') }}">Portfolio</a></li>
                 <li><a href="{{ route('blog') }}">Blog</a></li>
                 <li><a href="{{ route('contact') }}">Contact</a></li>
+                <li><a href="{{ route('login') }}">Connexion</a></li>
+                @if (Auth::check())
+                  <li><a href="{{ route('dashboard') }}">BackOffice</a></li>
+                @endif
+
             </ul>
         </div>
     </div>

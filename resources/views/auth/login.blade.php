@@ -40,12 +40,19 @@
                 </label>
             </div>
 
+            {{-- Ajout d'un boutou "Retour Home" --}}
+            <div class="flex items-center justify-end mt-4">
+              <a href="{{ route('home') }}">Retour Home</a>
+            </div>
+
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('password.request'))
                     <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
                         {{ __('Forgot your password?') }}
                     </a>
                 @endif
+
+
 
                 <x-button class="ml-3">
                     {{ __('Login') }}
