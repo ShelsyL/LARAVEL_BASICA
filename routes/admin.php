@@ -41,8 +41,11 @@ Route::get('/admin/posts', [AdminPosts::class, 'index'])->name('admin.posts.inde
   // Route POST pour le traitement du formulaire
 Route::post('/admin/posts/add/insert', [AdminPosts::class, 'store'])->name('admin.posts.store');
 
+// Route GET pour l'affichage du formulaire
+Route::get('/admin/posts/{post}/edit', [AdminPosts::class, 'edit'])->name('admin.posts.edit');
 
-
+// Route PUT pour le traitement du formulaire
+Route::put('/admin/posts/{post}', [AdminPosts::class, 'update'])->name('admin.posts.update');
 
 /*
 |--------------------------------------------------------------------------

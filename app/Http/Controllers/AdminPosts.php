@@ -28,4 +28,15 @@ class AdminPosts extends Controller {
     return redirect()->route('admin.posts.index');
          // ->with('status', "Record added");
   }
+
+  public function edit(Post $post){
+    return view('admin.posts.edit', compact('post'));
+  }
+
+  public function update(Request $request, Post $post){
+    $post->update($request->all());
+    return redirect()->route('admin.posts.index');
+                     // ->with('status', "Record updated");
+  }
+
 }

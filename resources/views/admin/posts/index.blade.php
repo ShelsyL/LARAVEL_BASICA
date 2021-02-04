@@ -6,14 +6,6 @@
       <x-nav-link :href="route('admin.posts.create')" :active="request()->routeIs('admin.posts.create')">
         {{ __('CreatePost') }}
       </x-nav-link>
-      {{-- Edit Post --}}
-      <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-        {{ __('EditPost') }}
-      </x-nav-link>
-      {{-- Delete Post --}}
-      <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-        {{ __('DeletePost') }}
-      </x-nav-link>
   </h2>
 </x-slot>
 
@@ -48,8 +40,8 @@
             <td class="w-1/3 text-left py-3 px-4">{{ $post->categorie->name }}</td>
 
             <td class="text-left py-3 px-4">
-              <a class="hover:text-blue-500" href="#">Modifier</a> <hr>
-              <a class="hover:text-blue-500" href="#">Supprimer</a>
+              <a class="hover:text-blue-500" href="{{ route('admin.posts.edit', $post->id) }}">Modifier</a> <hr>
+              <a class="hover:text-blue-500" href="">Supprimer</a>
             </td>
           </tr>
           @endforeach
