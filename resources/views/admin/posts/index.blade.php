@@ -1,21 +1,21 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Gestion des posts : ') }}
-            {{-- Create Post --}}
-          <x-nav-link :href="route('admin.posts.create')" :active="request()->routeIs('admin.posts.create')">
-              {{ __('CreatePost') }}
-          </x-nav-link>
-          {{-- Edit Post --}}
-        <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-            {{ __('EditPost') }}
-        </x-nav-link>
-        {{-- Delete Post --}}
-      <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-          {{ __('DeletePost') }}
+<x-slot name="header">
+  <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+    {{ __('Gestion des posts : ') }}
+      {{-- Create Post --}}
+      <x-nav-link :href="route('admin.posts.create')" :active="request()->routeIs('admin.posts.create')">
+        {{ __('CreatePost') }}
       </x-nav-link>
-        </h2>
-    </x-slot>
+      {{-- Edit Post --}}
+      <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+        {{ __('EditPost') }}
+      </x-nav-link>
+      {{-- Delete Post --}}
+      <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+        {{ __('DeletePost') }}
+      </x-nav-link>
+  </h2>
+</x-slot>
 
 
 {{-- <button class="center mr-5 bg-gray-200 hover:bg-gray-300 border border-gray-400 text-black font-bold py-2 px-6 rounded-md">

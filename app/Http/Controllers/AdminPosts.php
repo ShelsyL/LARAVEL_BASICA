@@ -13,7 +13,7 @@ class AdminPosts extends Controller {
  * @return [type] [description]
  */
  public function index(int $limit = 15) {
-     $posts = Post::orderBy('id', 'ASC')
+     $posts = Post::orderBy('created_at', 'desc')
                  ->take($limit)
                  ->get();
      return view('admin.posts.index', compact('posts'));
