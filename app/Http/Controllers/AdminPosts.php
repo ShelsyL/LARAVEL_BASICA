@@ -39,4 +39,10 @@ class AdminPosts extends Controller {
                      // ->with('status', "Record updated");
   }
 
+  public function destroy(Post $post){
+  $post->delete();
+  return redirect()->route('admin.posts.index');
+       // ->with('status', "Record deleted");
+}
+
 }

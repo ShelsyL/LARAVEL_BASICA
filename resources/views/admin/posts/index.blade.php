@@ -41,7 +41,11 @@
 
             <td class="text-left py-3 px-4">
               <a class="hover:text-blue-500" href="{{ route('admin.posts.edit', $post->id) }}">Modifier</a> <hr>
-              <a class="hover:text-blue-500" href="">Supprimer</a>
+              <form action="{{ route('admin.posts.destroy', $post->id) }}" method="post" >
+                 {{ csrf_field() }}
+                 {{ method_field('DELETE') }}
+                  <button type="submit">Supprimer</button>
+               </form>
             </td>
           </tr>
           @endforeach

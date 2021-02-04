@@ -47,6 +47,10 @@ Route::get('/admin/posts/{post}/edit', [AdminPosts::class, 'edit'])->name('admin
 // Route PUT pour le traitement du formulaire
 Route::put('/admin/posts/{post}', [AdminPosts::class, 'update'])->name('admin.posts.update');
 
+
+// Route DELETE pour la suppression du tag
+Route::delete('/admin/posts/{post}', [AdminPosts::class, 'destroy'])->name('admin.posts.destroy');
+
 /*
 |--------------------------------------------------------------------------
 | ROUTE ADMIN DES WORKS
