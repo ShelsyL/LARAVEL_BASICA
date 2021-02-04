@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Posts;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -12,22 +14,20 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-require __DIR__.'/auth.php';
-require __DIR__.'/admin.php';
-require __DIR__.'/works.php';
-require __DIR__.'/posts.php';
-require __DIR__.'/contact.php';
 
 
-// ROUTE PAR DEFAUT
-// PATTERN: /
-Route::get('/', function () {
-    return view('home.index');
-})->name('home');
+// LISTE DES POSTS
+// PATTERN: /blog
+// CTRL: Posts
+// ACTION: index
+Route::get('/blog', [Posts::class, 'index'])->name('blog');
 
 
-
-// ROUTE DU TEMPLATE WELCOME DE LARAVEL
-Route::get('/welcome', function () {
-    return view('welcome');
-});
+// DETAILS D'UN POST
+// PATTERN: /blog/post/slug
+// CTRL: Post
+// ACTION: show
+  Route::get('/blog/{post}/{slug}', [Posts::class, 'show'])
+       ->where('work', '[1-9][0-9]*')
+       ->where('slug', '[a-z0-9][a-z0-9\-]*')
+       ->name('posts.show');

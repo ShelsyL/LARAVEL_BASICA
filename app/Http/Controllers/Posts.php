@@ -22,15 +22,7 @@ class Posts extends Controller {
                 // ->get();
     // $posts = DB::table('posts')->paginate(4);
     return view('posts.index', compact('posts'));
-
-      // 'posts' => DB:table('posts')->paginate(4)
-      //
-
   }
-
-  // public function pagination(){
-  //   $pages =  DB::table('posts')->paginate(4);
-  // }
 
 
   /**
@@ -41,4 +33,9 @@ class Posts extends Controller {
   public function show (Post $post) {
     return view('posts.show', compact('post'));
   }
+
+
+
+
+
 }

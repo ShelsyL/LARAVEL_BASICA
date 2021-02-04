@@ -12,22 +12,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-require __DIR__.'/auth.php';
-require __DIR__.'/admin.php';
-require __DIR__.'/works.php';
-require __DIR__.'/posts.php';
-require __DIR__.'/contact.php';
 
 
-// ROUTE PAR DEFAUT
-// PATTERN: /
-Route::get('/', function () {
-    return view('home.index');
-})->name('home');
-
-
-
-// ROUTE DU TEMPLATE WELCOME DE LARAVEL
-Route::get('/welcome', function () {
-    return view('welcome');
-});
+// CONTACT PAGE
+// PATTERN: /contact
+// CTRL: Contacts
+// ACTION: form
+Route::get('/contact', function () {
+    return view('contact/index');
+})->name('contact');
+  // Route::get('/', [Home::class, 'index'])->name('home.index');
