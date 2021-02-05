@@ -11,7 +11,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ asset('assets/index.html') }}">
+            <a class="navbar-brand" href="{{ route('home') }}">
               <img src="{{ asset('assets/img/logo.png') }}" alt="Basica">
             </a>
         </div>

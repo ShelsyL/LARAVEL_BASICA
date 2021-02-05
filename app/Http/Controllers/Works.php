@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Work;
 
-class Works extends Controller {
+class Works extends Controller
+{
 
 /**
  * [show description]
@@ -16,11 +17,13 @@ class Works extends Controller {
     return view('works.show', compact('work'));
   }
 
-  /**
-   * [more description]
-   * @param  Request $request [description]
-   * @return [type]           [description]
-   */
+
+
+/**
+ * [more description]
+ * @param  Request $request [description]
+ * @return [type]           [description]
+ */
   public function more(Request $request){
 
     $limit = (isset($request->limit)) ? $request->limit : 6;
@@ -31,6 +34,5 @@ class Works extends Controller {
                   ->get();
 
       return view('works._list', compact('works'));
-      // return "CoucouPhp";
   }
 }

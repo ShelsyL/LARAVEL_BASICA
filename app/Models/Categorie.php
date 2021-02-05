@@ -11,6 +11,7 @@ class Categorie extends Model
 
     /**
      * GETTER des posts de la catégorie.
+     * @return [type] [description]
      */
     public function posts() {
       return $this->hasMany('App\Models\Post');

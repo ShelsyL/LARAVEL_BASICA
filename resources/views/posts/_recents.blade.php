@@ -8,7 +8,10 @@
 
   @foreach ($posts as $post)
     <li>
-      <a href="{{ route('posts.show', ['post' => $post->id, 'slug' => Str::slug($post->title, '-')]) }}">
+      <a href="#">
+        {{-- Si le lien doit être fonctionelle...
+        <a href="{{ route('posts.show', ['post' => $post->id, 'slug' => Str::slug($post->title, '-')]) }}">
+        --}}
         {{ $post->title }}
       </a>
     </li>

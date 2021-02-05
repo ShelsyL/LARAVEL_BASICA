@@ -1,4 +1,3 @@
-
 @extends('templates.page')
 
 @section('title')
@@ -30,7 +29,7 @@
                  </div>
                  <div class="single-post-content">
                     <p>{{ $post->content }}</p>
-                    <a href="blog-post.html" class="btn">Read more</a>
+                    <a href="{{ route('posts.show', ['post' => $post->id, 'slug' => Str::slug($post->title, '-')]) }}" class="btn">Read more</a>
                  </div>
               </div>
            </div>
@@ -39,7 +38,6 @@
            <!-- Pagination -->
            <div class="pagination-wrapper ">
               <ul class="pagination pagination-sm">
-                {{-- {{ $posts->links() }} --}}
                 {{ $posts->links() }}
                  {{-- <li class="disabled"><a href="#">Previous</a></li>
                  <li class="active"><a href="#">1</a></li>
@@ -47,8 +45,8 @@
                  <li><a href="#">3</a></li>
                  <li><a href="#">4</a></li>
                  <li><a href="#">5</a></li>
-                 <li><a href="#">Next</a></li>
-              </ul> --}}
+                 <li><a href="#">Next</a></li>--}}
+              </ul>
            </div>
         </div>
      </div>

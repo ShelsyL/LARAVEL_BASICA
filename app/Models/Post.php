@@ -13,12 +13,18 @@ class Post extends Model
 
     /**
      * GETTER de la categorie à qui appartient ce post.
+     * @return [type] [description]
      */
     public function categorie(){
       return $this->belongsTo('App\Models\Categorie');
 }
 
-// Ajout d'un enregistrement
+
+
+/**
+ * Ajout d'un enregistrement
+ * @param Request $request [description]
+ */
   public function add(Request $request) {
       $post = new Post;
       $post->title = $request->title;

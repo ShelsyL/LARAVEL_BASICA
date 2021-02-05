@@ -41,16 +41,29 @@
             </div>
 
             {{-- Ajout d'un boutou "Retour Home" --}}
-            <div class="flex items-center justify-end mt-4">
+            {{-- <div class="flex items-center justify-end mt-4">
               <a href="{{ route('home') }}">Retour Home</a>
-            </div>
+            </div> --}}
 
             <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
+
+              @if (Route::has('home'))
+                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('home') }}">
+                  {{ __('Retour Home  |') }}
+                </a>
+              @endif
+
+              @if (Route::has('register'))
+                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('register') }}">
+                    {{ __('Register  |') }}
+                </a>
+              @endif
+
+              @if (Route::has('password.request'))
+                  <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
+                      {{ __('Forgot your password?') }}
+                  </a>
+              @endif
 
 
 

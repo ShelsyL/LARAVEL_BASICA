@@ -26,7 +26,6 @@ Route::get('/', function () {
 })->name('home');
 
 
-
 // ROUTE DU TEMPLATE WELCOME DE LARAVEL
 Route::get('/welcome', function () {
     return view('welcome');

@@ -11,4 +11,4 @@
         </figcaption>
      </figure>
   </div>
-    @endforeach
+@endforeach
